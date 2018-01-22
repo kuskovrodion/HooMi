@@ -11,5 +11,7 @@ target 'HooMi' do
    pod 'Firebase/Database'
    pod 'SwiftyJSON'
    pod 'Charts'
+   pod 'RKPieChart', :path => '../'
+
 
 end

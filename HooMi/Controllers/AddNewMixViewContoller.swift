@@ -73,7 +73,7 @@ class AddNewMixViewContoller: UIViewController, UITextFieldDelegate, UITextViewD
         
         if AddNewMixName.text != "" && AddNewMixDescription.text != "" {
             
-            let mix = Mix(image: takenImage, MixName: AddNewMixName.text!, MixDesc: AddNewMixDescription.text, mixBowl: (bowlNameButton.titleLabel?.text)!)
+            let mix = Mix(image: takenImage, MixName: AddNewMixName.text!, MixDesc: AddNewMixDescription.text, mixBowl: (bowlNameButton.titleLabel?.text)!, mixStrength: mixStrengthLabel.text!)
             mix.saveIntoDatabase()
             self.dismiss(animated: true, completion: nil)
             
@@ -109,13 +109,13 @@ class AddNewMixViewContoller: UIViewController, UITextFieldDelegate, UITextViewD
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        return updatedText.count <= 50 // Change limit based on your requirement.
+        return updatedText.count <= 80
     }
      func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
-        return updatedText.count <= 150 // Change limit based on your requirement.
+        return updatedText.count <= 150
     }
     
 

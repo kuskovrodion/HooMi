@@ -8,9 +8,10 @@
 
 import UIKit
 import Firebase
-class MainScreenTableViewController: UITableViewController, UISearchBarDelegate {
-    
 
+class MainScreenTableViewController: UITableViewController, UISearchBarDelegate {
+
+    
     
     var mixes = [Mix]()
     var keys : [String] = []
@@ -22,7 +23,6 @@ class MainScreenTableViewController: UITableViewController, UISearchBarDelegate 
         
         inserting()
         setupNavBar()
-        
         tableView.allowsMultipleSelectionDuringEditing = true
         
         
@@ -37,40 +37,8 @@ class MainScreenTableViewController: UITableViewController, UISearchBarDelegate 
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.barStyle = .black
         
-        let searchController = UISearchController(searchResultsController: nil)
-        navigationItem.searchController = searchController
-        
     }
     
-//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            getChildID()
-//            let time = DispatchTime.now() + 1
-//            DispatchQueue.main.asyncAfter(deadline: time, execute: {
-//                self.ref?.child("Mix").child(self.keys[indexPath.row]).removeValue()
-//                self.mixes.remove(at: indexPath.row)
-//                tableView.deleteRows(at: [indexPath], with: .automatic)
-//                self.keys = []
-//            })
-//        }
-//    }
-//
-//    func getChildID() {
-//        ref?.child("Mix").observeSingleEvent(of: .value, with: { (snapshot) in
-//            for child in snapshot.children {
-//                let snap = child as! DataSnapshot
-//                let key = snap.key
-//                self.keys.append(key)
-//
-//            }
-//
-//        })
-//
-//    }
     
     func inserting() {
         Database.database().reference().child("Mix").observe(.childAdded) { (snapshot) in

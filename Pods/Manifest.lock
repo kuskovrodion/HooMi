@@ -38,6 +38,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - RKPieChart (0.0.1)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - RKPieChart
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -59,8 +61,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  RKPieChart: 8e643c505d24e61574f3a2fd6bd807403840b24b
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 1c130ab2b93d80a201187ba4b5ace194fda661bf
+PODFILE CHECKSUM: 66177515b8aa53096578c43474454e1d16aa577f
 
 COCOAPODS: 1.4.0

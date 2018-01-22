@@ -15,12 +15,13 @@ class Mix {
     var imageUrl: String!
     var image: UIImage!
     var mixBowl: String!
-    
-    init (image: UIImage, MixName: String, MixDesc: String, mixBowl: String) {
+    var mixStrength: String!
+    init (image: UIImage, MixName: String, MixDesc: String, mixBowl: String, mixStrength: String) {
         self.image = image
         self.MixDesc = MixDesc
         self.MixName = MixName
         self.mixBowl = mixBowl
+        self.mixStrength = mixStrength
     }
     
     init (snapshot: DataSnapshot) {
@@ -29,6 +30,7 @@ class Mix {
         self.MixName = json["MixName"].stringValue
         self.MixDesc = json["MixDesc"].stringValue
         self.mixBowl = json["mixBowl"].stringValue
+        self.mixStrength = json["mixStrength"].stringValue
     }
     
     func saveIntoDatabase() {
@@ -40,7 +42,7 @@ class Mix {
         if let imageData = UIImageJPEGRepresentation(self.image, 0.5) {
             newImageRef.putData(imageData).observe(.success, handler: { (snapshot) in
                 self.imageUrl = snapshot.metadata?.downloadURL()?.absoluteString
-                let newMixDict = ["imageUrl" : self.imageUrl, "MixName" : self.MixName, "MixDesc" : self.MixDesc, "mixBowl":self.mixBowl]
+                let newMixDict = ["imageUrl" : self.imageUrl, "MixName" : self.MixName, "MixDesc" : self.MixDesc, "mixBowl":self.mixBowl, "mixStrength" : self.mixStrength]
                 mixRef.setValue(newMixDict)
             })
         }
