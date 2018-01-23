@@ -45,8 +45,6 @@ class AddNewMixViewContoller: UIViewController, UITextFieldDelegate, UITextViewD
     
     @IBOutlet weak var bowlNameButton: UIButton!
     
-    
-    
     func hideAndAppear() {
         bowlButton.forEach { (button) in
             UIView.animate(withDuration: 0.2, animations: {
@@ -57,11 +55,9 @@ class AddNewMixViewContoller: UIViewController, UITextFieldDelegate, UITextViewD
     }
     
 
-    
-
-    
-    
     @IBAction func shareMixButton(_ sender: UIButton) {
+        
+        
         if takenImage == nil {
             let ErrorAlert = UIAlertController(title: "Oops..", message: "Choose image", preferredStyle: .alert)
             
@@ -73,8 +69,21 @@ class AddNewMixViewContoller: UIViewController, UITextFieldDelegate, UITextViewD
         
         if AddNewMixName.text != "" && AddNewMixDescription.text != "" {
             
-            let mix = Mix(image: takenImage, MixName: AddNewMixName.text!, MixDesc: AddNewMixDescription.text, mixBowl: (bowlNameButton.titleLabel?.text)!, mixStrength: mixStrengthLabel.text!)
-            mix.saveIntoDatabase()
+            if tabackPercentsThirdField.isHidden == true {
+                tabackPercentsThirdField.text = "0"
+                tabackPercentsForthField.text = "0"
+                let mix = Mix(image: takenImage, MixName: AddNewMixName.text!, MixDesc: AddNewMixDescription.text, mixBowl: (bowlNameButton.titleLabel?.text)!, mixStrength: mixStrengthLabel.text!, firstTabackName: tabackNameFirstField.text!, firstTabackPercents: tabackPercentsFirstField.text!, secondTabackName: tabackNameSecondField.text!, secondTabackPercents: tabackPercentsSecondField.text!, thirdTabackName: tabackNameThirdField.text!, thirdTabackPercents: tabackPercentsThirdField.text!, forthTabackNamme: tabackNameForthField.text!, forthTabackPercents: tabackPercentsForthField.text!)
+                mix.saveIntoDatabase()
+                
+            } else if tabackPercentsForthField.isHidden == true {
+                tabackPercentsForthField.text = "0"
+                let mix = Mix(image: takenImage, MixName: AddNewMixName.text!, MixDesc: AddNewMixDescription.text, mixBowl: (bowlNameButton.titleLabel?.text)!, mixStrength: mixStrengthLabel.text!, firstTabackName: tabackNameFirstField.text!, firstTabackPercents: tabackPercentsFirstField.text!, secondTabackName: tabackNameSecondField.text!, secondTabackPercents: tabackPercentsSecondField.text!, thirdTabackName: tabackNameThirdField.text!, thirdTabackPercents: tabackPercentsThirdField.text!, forthTabackNamme: tabackNameForthField.text!, forthTabackPercents: tabackPercentsForthField.text!)
+                mix.saveIntoDatabase()
+            } else {
+                let mix = Mix(image: takenImage, MixName: AddNewMixName.text!, MixDesc: AddNewMixDescription.text, mixBowl: (bowlNameButton.titleLabel?.text)!, mixStrength: mixStrengthLabel.text!, firstTabackName: tabackNameFirstField.text!, firstTabackPercents: tabackPercentsFirstField.text!, secondTabackName: tabackNameSecondField.text!, secondTabackPercents: tabackPercentsSecondField.text!, thirdTabackName: tabackNameThirdField.text!, thirdTabackPercents: tabackPercentsThirdField.text!, forthTabackNamme: tabackNameForthField.text!, forthTabackPercents: tabackPercentsForthField.text!)
+                mix.saveIntoDatabase()
+            }
+
             self.dismiss(animated: true, completion: nil)
             
             let alert = UIAlertController(title: "Congrats!", message: "Your mix was successfully saved", preferredStyle: .alert)

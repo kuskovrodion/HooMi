@@ -368,16 +368,19 @@
                                 <rect key="frame" x="0.0" y="64" width="378" height="297"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ye9-Ep-1kX">
-                                <rect key="frame" x="7" y="291" width="360" height="60"/>
+                                <rect key="frame" x="7" y="271" width="360" height="80"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="AuM-8T-6LN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzv-NR-NWs">
-                                <rect key="frame" x="9" y="71" width="360" height="80"/>
+                                <rect key="frame" x="9" y="71" width="360" height="65"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="3tQ-29-g4w"/>
+                                    <constraint firstAttribute="height" constant="65" id="3tQ-29-g4w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="textColor"/>
@@ -416,7 +419,7 @@
                             <constraint firstItem="Bd0-ne-IZs" firstAttribute="bottom" secondItem="Daq-Sg-YAq" secondAttribute="bottom" constant="248" id="ARd-V4-bh6"/>
                             <constraint firstItem="Umz-uF-y35" firstAttribute="leading" secondItem="Daq-Sg-YAq" secondAttribute="trailing" constant="11" id="CDe-UJ-48V"/>
                             <constraint firstItem="Uzv-NR-NWs" firstAttribute="top" secondItem="Bd0-ne-IZs" secondAttribute="top" constant="7" id="Ctg-OI-0oz"/>
-                            <constraint firstItem="ye9-Ep-1kX" firstAttribute="top" secondItem="Uzv-NR-NWs" secondAttribute="bottom" constant="140" id="F3k-0d-Qf2"/>
+                            <constraint firstItem="ye9-Ep-1kX" firstAttribute="top" secondItem="Uzv-NR-NWs" secondAttribute="bottom" constant="135" id="F3k-0d-Qf2"/>
                             <constraint firstItem="Daq-Sg-YAq" firstAttribute="baseline" secondItem="Umz-uF-y35" secondAttribute="baseline" id="P3V-kx-ghF"/>
                             <constraint firstItem="vrk-3X-ocm" firstAttribute="top" secondItem="sA4-h6-dFQ" secondAttribute="bottom" constant="8" symbolic="YES" id="PDe-pp-GIM"/>
                             <constraint firstItem="vrk-3X-ocm" firstAttribute="leading" secondItem="iIe-c7-SSR" secondAttribute="leadingMargin" id="XFn-ZQ-VUn"/>
