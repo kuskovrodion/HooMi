@@ -170,14 +170,10 @@ class AddNewMixViewContoller: UIViewController, UITextFieldDelegate, UITextViewD
             test += 1
             print("ПЛЮСИК \(test)")
             if test == 1 {
-                tabackNameSecondField.isHidden = false
-                tabackPercentsSecondField.isHidden = false
-                outletDeleteRowButton.isHidden = false
-            } else if test == 2 {
                 tabackNameThirdField.isHidden = false
                 tabackPercentsThirdField.isHidden = false
                 outletDeleteRowButton.isHidden = false
-            } else if test == 3 {
+            } else if test == 2 {
                 tabackNameForthField.isHidden = false
                 tabackPercentsForthField.isHidden = false
                 outletDeleteRowButton.isHidden = false
@@ -191,12 +187,9 @@ class AddNewMixViewContoller: UIViewController, UITextFieldDelegate, UITextViewD
         deleteClicks += 1
         print("МИНУСИК \(deleteClicks)")
         if deleteClicks == 1 {
-            tabackNameSecondField.isHidden = true
-            tabackPercentsSecondField.isHidden = true
-        } else if deleteClicks == 2 {
             tabackNameThirdField.isHidden = true
             tabackPercentsThirdField.isHidden = true
-        } else if deleteClicks == 3 {
+        } else if deleteClicks == 2 {
             tabackNameForthField.isHidden = true
             tabackPercentsForthField.isHidden = true
             outletDeleteRowButton.isHidden = true
