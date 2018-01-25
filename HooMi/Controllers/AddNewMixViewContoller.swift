@@ -112,7 +112,20 @@ class AddNewMixViewContoller: UIViewController, UITextFieldDelegate, UITextViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AddNewMixName.setBottomBorder()
+//        tabackNameFirstField.setBottomBorder()
+//        tabackNameSecondField.setBottomBorder()
+//        tabackNameThirdField.setBottomBorder()
+//        tabackNameForthField.setBottomBorder()
+//        tabackPercentsFirstField.setBottomBorder()
+//        tabackPercentsSecondField.setBottomBorder()
+//        tabackPercentsThirdField.setBottomBorder()
+//        tabackPercentsForthField.setBottomBorder()
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+//        settingBorderToFields()
     }
 
     
@@ -207,10 +220,28 @@ class AddNewMixViewContoller: UIViewController, UITextFieldDelegate, UITextViewD
         self.present(imagePicker, animated: true, completion: nil)
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+}
+
+extension UITextField
+{
+    func setBottomBorder()
+    {
+        self.borderStyle = UITextBorderStyle.none;
+        let border = CALayer()
+        let width = CGFloat(1.0)
+        border.borderColor = UIColor.black.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width,   width:  self.frame.size.width, height: self.frame.size.height)
+        
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
+    
 }
 
 extension AddNewMixViewContoller : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -226,7 +257,6 @@ extension AddNewMixViewContoller : UIImagePickerControllerDelegate, UINavigation
     }
     
 }
-
 
 
 
