@@ -113,21 +113,8 @@ class AddNewMixViewContoller: UIViewController, UITextFieldDelegate, UITextViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         AddNewMixName.setBottomBorder()
-//        tabackNameFirstField.setBottomBorder()
-//        tabackNameSecondField.setBottomBorder()
-//        tabackNameThirdField.setBottomBorder()
-//        tabackNameForthField.setBottomBorder()
-//        tabackPercentsFirstField.setBottomBorder()
-//        tabackPercentsSecondField.setBottomBorder()
-//        tabackPercentsThirdField.setBottomBorder()
-//        tabackPercentsForthField.setBottomBorder()
         
     }
-    
-    override func viewDidLayoutSubviews() {
-//        settingBorderToFields()
-    }
-
     
     func hideAndAppear() {
         bowlButton.forEach { (button) in
